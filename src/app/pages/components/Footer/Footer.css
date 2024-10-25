@@ -1,0 +1,26 @@
+.rodape{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #0A142F;
+}
+
+.rodape ul li{
+    list-style:none;
+    display: inline-block;
+    margin-left:20px;
+}
+/*Responsividade*/
+@media(max-width:600px){
+  .rodape{
+    display: flex;
+    text-align: center;
+  }
+  .rodape ul li{
+    margin: 10px;
+  }
+  .rodape ul{
+    margin-top: 10px;
+  }
+}

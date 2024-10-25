@@ -1,0 +1,143 @@
+.container-application {
+    background-color: #1F3E81;
+}
+
+.application {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.lado-esquerdo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    gap: 10px; 
+}
+
+.texto-titulo-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; 
+}
+
+.lado-direito {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.imagemBarbeiro img {
+    width: 100%;
+    max-width: 700px; 
+    height: auto;
+}
+
+.titulo {
+    font-size: 64px;
+    color: white;
+}
+
+.botaosaibamais {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botaosaibamais:hover {
+    background-color: white;
+    color: #1F3E81;
+}
+
+.paragrafo p {
+    font-size: 35px;
+    color: white;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .application {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lado-esquerdo,
+    .lado-direito {
+        width: 100%;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .lado-esquerdo {
+        align-items: center;
+    }
+
+    .texto-titulo-botao {
+        align-items: center; 
+    }
+
+    .titulo {
+        font-size: 48px;
+    }
+
+    .paragrafo p {
+        font-size: 28px;
+    }
+
+    .botaosaibamais {
+        font-size: 28px;
+    }
+
+    .imagemBarbeiro img {
+        width: 90%; 
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+    .application {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .paragrafo p {
+        font-size: 18px;
+    }
+
+    .botaosaibamais {
+        font-size: 20px;
+    }
+
+    .texto-titulo-botao {
+        align-items: center; 
+    }
+
+    .imagemBarbeiro img {
+        width: 100%; 
+        max-width: 100%; 
+    }
+
+    .lado-esquerdo,
+    .lado-direito {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+.contato-container {
+  background-color: #21A84B;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  min-height: 400px;
+  flex-wrap: wrap; 
+}
+
+.left-side-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  text-align: center;
+}
+
+.left-side-contato h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.left-side-contato span {
+  color: #1F3E81;
+}
+
+.left-side-contato img {
+  max-width: 90%;
+  height: auto;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
+
+.right-side-contato {
+  padding: 20px;
+  margin-top: 90px;
+  border-radius: 10px;
+  width: 45%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #EEEEEE;
+}
+
+.card-form p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1F3E81;
+  font-weight: 600;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes button {
+  background-color: transparent;
+  color: #1F3E81;
+  border: 2px solid #1F3E81;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.botoes .selected {
+  background-color: #21a84b;
+  color: white;
+  border: 2px solid #21a84b;
+}
+
+.botao-enviar {
+  background-color: #21a84b;
+  color: white; /* Corrigido para branco */
+  border: 2px solid #21a84b;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.botoes button span {
+  color: inherit;
+}
+
+.botoes button:hover {
+  background-color: #e0e0e0;
+}
+
+.card-form-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.card-form-input:focus {
+  border-color: #21a84b;
+  outline: none;
+}
+
+.redesocial {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.redesocial img {
+  width: 60px;
+  height: auto;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+  .left-side-contato, .right-side-contato {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contato-container {
+    padding: 20px;
+  }
+
+  .left-side-contato h1 {
+    font-size: 2rem;
+  }
+
+  .card-form p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-side-contato h1 {
+    font-size: 1.5rem;
+  }
+
+  .left-side-contato img {
+    margin-top: -50px;
+  }
+
+  .card-form p {
+    font-size: 1rem;
+  }
+
+  .botoes button, .botao-enviar {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
+
+  .redesocial img {
+    width: 40px;
+  }
+}

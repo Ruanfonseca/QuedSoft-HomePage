@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+.servicos-container {
+  background: linear-gradient(to right, #1f3e81, #21a84b);
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.servicos-container h1 {
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 250px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.text-card {
+  padding: 20px;
+  padding-top: 40px;
+  font-size: 22.07px;
+  font-weight: 700;
+  color: #27348B;
+}
+
+.img {
+  margin-top: 30px;
+  width: 30px;
+}
+
+.imagem-card {
+  margin-top: 15px;
+}
+
+/* Responsividade para telas médias (ex.: tablets) */
+@media (max-width: 1200px) {
+  .servicos-container h1 {
+    font-size: 40px;
+  }
+
+  .card {
+    width: 220px;
+  }
+
+  .text-card {
+    font-size: 20px;
+  }
+}
+
+/* Responsividade para telas pequenas (ex.: celulares) */
+@media (max-width: 768px) {
+  .servicos-container {
+    padding: 10px 0;
+    justify-content: center; /* Garante que o conteúdo seja centralizado verticalmente */
+  }
+
+  .servicos-container h1 {
+    font-size: 32px;
+  }
+
+  .cards-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+  }
+
+  .text-card {
+    font-size: 18px;
+  }
+}
+
+/* Responsividade para telas muito pequenas (ex.: smartphones) */
+@media (max-width: 480px) {
+  .servicos-container h1 {
+    font-size: 28px;
+  }
+
+  .text-card {
+    font-size: 16px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .img {
+    width: 25px;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}

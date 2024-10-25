@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+.vantagens-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos se quebrem em linhas em telas menores */
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.subtitle-vantagens, .subtitle-vantagens-2 {
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: 1px;
+  text-align: center; /* Centraliza o texto em dispositivos menores */
+}
+
+.subtitle-vantagens {
+  color: #193E82;
+}
+
+.subtitle-vantagens-2 {
+  color: #21A84B;
+  padding-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-button {
+  background-color: #1F3E81;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  display: inline-block;
+  max-width: fit-content;
+}
+
+.info-button:hover {
+  background-color: #0E1F40;
+}
+
+.imgladoesquerdo, .imgladodireito {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: black;
+  padding: 10px; /* Adiciona padding para espaçamento */
+}
+
+.imgladoesquerdo {
+  flex-wrap: wrap;
+}
+
+.imgladodireito {
+  background-color: #fff;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsividade para telas médias (ex.: tablets) */
+@media (max-width: 1200px) {
+  .vantagens-container {
+    max-width: 90%;
+  }
+
+  .subtitle-vantagens, .subtitle-vantagens-2 {
+    font-size: 36px; /* Reduz o tamanho da fonte */
+  }
+
+  .imgladoesquerdo, .imgladodireito {
+    font-size: 20px;
+  }
+  .imgladodireito{
+    display: none;
+  }
+}
+
+/* Responsividade para telas pequenas (ex.: celulares) */
+@media (max-width: 768px) {
+  .vantagens-container {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens no eixo principal */
+    max-width: 100%;
+  }
+
+  .subtitle-vantagens, .subtitle-vantagens-2 {
+    font-size: 32px; /* Reduz o tamanho da fonte para melhor legibilidade */
+    padding: 10px; /* Adiciona espaçamento para melhorar o layout */
+  }
+
+  .imgladoesquerdo, .imgladodireito {
+    width: 100%; /* Faz os elementos ocuparem toda a largura */
+    font-size: 18px;
+    padding: 20px; /* Adiciona mais espaçamento para separar os elementos */
+  }
+  .imgladodireito{
+    display: none;
+  }
+}
+
+/* Responsividade para telas muito pequenas (ex.: smartphones) */
+@media (max-width: 480px) {
+  .subtitle-vantagens, .subtitle-vantagens-2 {
+    font-size: 38px; /* Ajusta o tamanho da fonte para telas muito pequenas */
+  }
+
+  .imgladoesquerdo, .imgladodireito {
+    font-size: 24px;
+  }
+
+  .info-button {
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    text-align: center; /* Centraliza o texto do botão */
+    padding: 15px; /* Aumenta o padding para melhor tocabilidade */
+  }
+  .imgladodireito{
+    display: none;
+  }
+}
