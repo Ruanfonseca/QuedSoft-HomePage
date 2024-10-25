@@ -71,20 +71,13 @@
   cursor: pointer;
   flex: 1;
   font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.card-form-input {
-  width: 100%;
-  padding: 12px; /* Aumenta o padding interno dos inputs */
-  margin: 15px 0; /* Adiciona mais espaço entre os inputs */
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.card-form-input:focus {
-  border-color: #21a84b;
-  outline: none;
+.botoes .selected {
+  background-color: #21a84b; /* Cor verde para o botão selecionado */
+  color: white;
+  border: 2px solid #21a84b;
 }
 
 .botao-enviar {
@@ -98,19 +91,10 @@
   font-size: 1rem;
 }
 
-
-.botoes button span {
-  color: inherit;
-}
-
-.botoes button:hover {
-  background-color: #e0e0e0;
-}
-
 .card-form-input {
   width: 100%;
-  padding: 10px;
-  margin: 20px 0; 
+  padding: 12px; /* Aumenta o padding interno dos inputs */
+  margin: 15px 0; /* Adiciona mais espaço entre os inputs */
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
