@@ -1,62 +1,38 @@
 .container-application {
     background-color: #1F3E81;
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do container */
+    overflow: hidden;
 }
 
 .application {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    max-width: 80%;
+    max-width: 1200px; /* Limite máximo de largura */
     margin: 0 auto;
-    overflow: hidden; /* Mantém o conteúdo dentro do limite */
+    overflow: hidden;
+    padding: 20px; /* Padding interno para margens responsivas */
 }
 
-.lado-esquerdo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    gap: 10px; 
-    padding: 20px; /* Adiciona espaçamento interno */
-    box-sizing: border-box; /* Inclui o padding no tamanho do elemento */
-}
-
-.texto-titulo-botao {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; 
-}
-
+.lado-esquerdo,
 .lado-direito {
     flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: 20px; /* Adiciona espaçamento interno */
-    box-sizing: border-box; /* Inclui o padding no tamanho do elemento */
-}
-
-.imagemBarbeiro img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    object-fit: contain; /* Mantém a proporção da imagem dentro do limite */
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
 }
 
 .titulo {
-    font-size: 55px;
+    font-size: clamp(32px, 5vw, 55px); /* Ajuste de fonte responsivo */
     color: white;
     margin-bottom: 35px;
-    word-wrap: break-word; /* Permite que o texto quebre para a próxima linha se necessário */
 }
 
 .botaosaibamais {
-    font-size: 28px;
+    font-size: clamp(18px, 2.5vw, 28px); /* Fonte responsiva */
     font-weight: bold;
     color: white;
     background-color: transparent;
@@ -72,74 +48,49 @@
 }
 
 .paragrafo p {
-    font-size: 29px;
+    font-size: clamp(16px, 2.5vw, 29px);
     margin-top: 25px;
     margin-bottom: 25px;
     color: white;
+}
+
+.imagemBarbeiro img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Responsividade para tablets */
 @media (max-width: 768px) {
     .application {
         flex-direction: column;
-        text-align: center;
+        height: auto;
+        padding: 20px;
     }
 
-    .lado-esquerdo,
-    .lado-direito {
-        width: 100%;
-        margin-top: 20px;
+    .lado-esquerdo, .lado-direito {
         align-items: center;
-    }
-
-    .titulo {
-        font-size: 48px;
-    }
-
-    .paragrafo p {
-        font-size: 28px;
-    }
-
-    .botaosaibamais {
-        font-size: 28px;
-    }
-
-    .imagemBarbeiro img {
-        width: 90%; 
+        text-align: center;
+        margin-top: 20px;
     }
 }
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 480px) {
-    .application {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-
     .titulo {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .paragrafo p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .botaosaibamais {
-        font-size: 20px;
-    }
-
-    .texto-titulo-botao {
-        align-items: center; 
+        font-size: 18px;
     }
 
     .imagemBarbeiro img {
-        width: 100%; 
-        max-width: 100%; 
-    }
-
-    .lado-esquerdo,
-    .lado-direito {
-        margin-top: 10px;
+        width: 100%;
     }
 }

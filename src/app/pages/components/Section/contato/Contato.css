@@ -37,48 +37,61 @@
 }
 
 .right-side-contato {
-  padding: 20px;
+  padding: 30px; /* Aumenta o padding do formulário */
   border-radius: 10px;
-  width: 45%;
+  width: 50%; /* Aumenta a largura do formulário */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #EEEEEE;
 }
 
+.card-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .card-form p {
   font-size: 1.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #1F3E81;
   font-weight: 600;
 }
 
 .botoes {
   display: flex;
-  gap: 10px;
+  gap: 15px; /* Aumenta o espaço entre os botões */
+  margin-bottom: 20px; /* Adiciona espaço abaixo dos botões */
 }
 
 .botoes button {
   background-color: transparent;
   color: #1F3E81;
   border: 2px solid #1F3E81;
-  padding: 10px 20px;
-  margin: 0;
+  padding: 12px 24px; /* Aumenta o padding dos botões */
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
   font-size: 1rem;
 }
 
-.botoes .selected {
-  background-color: #21a84b;
-  color: white;
-  border: 2px solid #21a84b;
+.card-form-input {
+  width: 100%;
+  padding: 12px; /* Aumenta o padding interno dos inputs */
+  margin: 15px 0; /* Adiciona mais espaço entre os inputs */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.card-form-input:focus {
+  border-color: #21a84b;
+  outline: none;
 }
 
 .botao-enviar {
   background-color: #21a84b;
   color: white;
   border: 2px solid #21a84b;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Aumenta o padding do botão de envio */
   margin-top: 20px; 
   border-radius: 5px;
   cursor: pointer;
