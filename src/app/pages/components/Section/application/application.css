@@ -43,8 +43,9 @@
 }
 
 .titulo {
-    font-size: 48px;
+    font-size: 55px;
     color: white;
+    margin-bottom: 35px;
 }
 
 .botaosaibamais {
@@ -64,7 +65,9 @@
 }
 
 .paragrafo p {
-    font-size: 35px;
+    font-size: 29px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     color: white;
 }
 
