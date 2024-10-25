@@ -6,7 +6,9 @@
   max-width: 80%;
   margin: 0 auto;
 }
-
+.spans{
+  margin: 2px;
+}
 .hero-container p {
   color: #1F3E81;
   padding-bottom: 80px;

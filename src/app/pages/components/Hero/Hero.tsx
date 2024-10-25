@@ -12,7 +12,7 @@ const Hero = () => {
         <h1>Bem-vindo a <span>QuedSoft</span></h1>
         <p>
           Somos uma empresa de tecnologia que tem como objetivo oferecer recursos digitais
-          para o crescimento do seu negócio. Através do <strong>design estratégico</strong> 
+          para o crescimento do seu negócio. Através do <strong className='spans'>design estratégico</strong> 
           voltado para mídias sociais e do <strong>desenvolvimento de sistemas</strong>, 
           queremos tornar sua empresa mais relevante no mercado.
         </p> 
