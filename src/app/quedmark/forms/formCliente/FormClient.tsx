@@ -48,7 +48,7 @@ const FormClient: React.FC<FormClientProps> = ({ salaoId, previousFormData = {} 
     senha: '',
     foto: '',
     dataNascimento: '',
-    sexo: 'M',
+    sexo: 'M' as 'M' | 'F',
     status: 'A',
     contaBancaria: {
       titular: '',
@@ -61,6 +61,7 @@ const FormClient: React.FC<FormClientProps> = ({ salaoId, previousFormData = {} 
     },
     dataCadastro: new Date().toISOString(),
   });
+  
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -188,12 +189,13 @@ const FormClient: React.FC<FormClientProps> = ({ salaoId, previousFormData = {} 
         <InputLabel>Sexo</InputLabel>
         <Select
           value={clientData.sexo}
-          onChange={(e) => setClientData({ ...clientData, sexo: e.target.value as string })}
+          onChange={(e) => setClientData({ ...clientData, sexo: e.target.value as 'M' | 'F' })}
           required
         >
           <MenuItem value="M">Masculino</MenuItem>
           <MenuItem value="F">Feminino</MenuItem>
         </Select>
+
         {errors.sexo && <FormHelperText error>{errors.sexo}</FormHelperText>}
       </FormControl>
 
