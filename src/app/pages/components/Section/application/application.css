@@ -26,13 +26,13 @@
 }
 
 .titulo {
-    font-size: clamp(32px, 5vw, 55px); /* Ajuste de fonte responsivo */
+    font-size: 35px;
     color: white;
     margin-bottom: 35px;
 }
 
 .botaosaibamais {
-    font-size: clamp(18px, 2.5vw, 28px); /* Fonte responsiva */
+    font-size: 15px;
     font-weight: bold;
     color: white;
     background-color: transparent;
@@ -48,7 +48,7 @@
 }
 
 .paragrafo p {
-    font-size: clamp(16px, 2.5vw, 29px);
+    font-size: 20px;
     margin-top: 25px;
     margin-bottom: 25px;
     color: white;
