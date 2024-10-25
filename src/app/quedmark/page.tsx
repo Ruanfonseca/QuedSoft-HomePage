@@ -24,11 +24,15 @@ const QuedMark = () => {
         <div className="quedMarkDescricao">
               <h1 className="titulo">Sobre</h1>
               <p className='textosobre'>
-                A QuedMark nasceu para ajudar salões de beleza , studio de estética, barbearias e profissionais autônomos a ter mais tranquilidade na hora de organizar seus atendimentos. Com uma plataforma simples e prática, você consegue marcar, gerenciar e ajustar seus compromissos de forma eficiente, tudo em um só lugar. Esqueça a dor de cabeça com desencontros de horários e atrasos: com a QuedMark, você ganha controle total sobre sua agenda e pode focar no que realmente importa, que é atender bem os seus clientes. 
+                A QuedMark nasceu para ajudar salões de beleza , studio de estética, barbearias e profissionais autônomos a ter mais tranquilidade na hora de organizar seus atendimentos.<br/>
+                 Com uma plataforma simples e prática, você consegue marcar, gerenciar e ajustar seus compromissos de forma eficiente, tudo em um só lugar. Esqueça a dor de cabeça com desencontros de horários e atrasos: 
+                 com a QuedMark, você ganha controle total sobre sua agenda e pode focar no que realmente importa, 
+                 que é atender bem os seus clientes.<br/> 
 
-                Hoje em dia, com a correria do dia a dia, é fundamental contar com uma ferramenta que simplifique o agendamento de horários e facilite a comunicação com os clientes. A QuedMark cuida disso para você, enviando lembretes automáticos, permitindo o acesso fácil ao histórico de atendimentos e trazendo relatórios para você acompanhar o desempenho do seu negócio. 
+                Hoje em dia, com a correria do dia a dia, é fundamental contar com uma ferramenta que simplifique o agendamento de horários e facilite a comunicação com os clientes.<br/>
+                 A QuedMark cuida disso para você, enviando lembretes automáticos, permitindo o acesso fácil ao histórico de atendimentos e trazendo relatórios para você acompanhar o desempenho do seu negócio.<br/> 
 
-                Afinal, tempo é dinheiro, e a QuedMark está aqui para ajudar você a economizar os dois, deixando a gestão dos atendimentos mais leve e organizada.
+                Afinal, tempo é dinheiro, e a QuedMark está aqui para ajudar você a economizar os dois, deixando a gestão dos atendimentos mais leve e organizada.<br/>
               </p>
         
         
