@@ -51,6 +51,8 @@ const Contato = () => {
                 
               </button>
             </div>
+            <br/>
+            <br/>
             <TextField
               id="outlined-multiline-flexible"
               label="Nome"
@@ -58,7 +60,8 @@ const Contato = () => {
               maxRows={4}
               className='card-form-input'
             />
-            
+            <br/>
+            <br/>
             <TextField
               id="outlined-multiline-flexible"
               label="Email"
@@ -66,6 +69,8 @@ const Contato = () => {
               maxRows={4}
               className='card-form-input'
             />
+            <br/>
+            <br/>
             <TextField
               id="outlined-multiline-static"
               label="Mensagem"
