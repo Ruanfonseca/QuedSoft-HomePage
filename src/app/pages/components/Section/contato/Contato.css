@@ -37,9 +37,9 @@
 }
 
 .right-side-contato {
-  padding: 30px; /* Aumenta o padding do formulário */
+  padding: 30px; 
   border-radius: 10px;
-  width: 50%; /* Aumenta a largura do formulário */
+  width: 50%; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #EEEEEE;
 }
@@ -58,15 +58,15 @@
 
 .botoes {
   display: flex;
-  gap: 15px; /* Aumenta o espaço entre os botões */
-  margin-bottom: 20px; /* Adiciona espaço abaixo dos botões */
+  gap: 15px; 
+  margin-bottom: 20px; 
 }
 
 .botoes button {
   background-color: transparent;
   color: #1F3E81;
   border: 2px solid #1F3E81;
-  padding: 12px 24px; /* Aumenta o padding dos botões */
+  padding: 12px 24px; 
   border-radius: 5px;
   cursor: pointer;
   flex: 1;
@@ -75,7 +75,7 @@
 }
 
 .botoes .selected {
-  background-color: #21a84b; /* Cor verde para o botão selecionado */
+  background-color: #21a84b; 
   color: white;
   border: 2px solid #21a84b;
 }
@@ -84,7 +84,7 @@
   background-color: #21a84b;
   color: white;
   border: 2px solid #21a84b;
-  padding: 12px 24px; /* Aumenta o padding do botão de envio */
+  padding: 12px 24px; 
   margin-top: 20px; 
   border-radius: 5px;
   cursor: pointer;
@@ -93,8 +93,8 @@
 
 .card-form-input {
   width: 100%;
-  padding: 12px; /* Aumenta o padding interno dos inputs */
-  margin: 15px 0; /* Adiciona mais espaço entre os inputs */
+  padding: 12px; 
+  margin: 15px 0; 
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
-import '../css/style.css';
+import '../css/form.css';
 import FormClient from './formCliente/FormClient';
 
 const salonSchema = z.object({

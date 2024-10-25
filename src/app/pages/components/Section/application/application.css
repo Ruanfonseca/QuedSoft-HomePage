@@ -7,10 +7,10 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    max-width: 1200px; /* Limite máximo de largura */
+    max-width: 1200px; 
     margin: 0 auto;
     overflow: hidden;
-    padding: 20px; /* Padding interno para margens responsivas */
+    padding: 20px; 
 }
 
 .lado-esquerdo,

@@ -8,7 +8,7 @@ import {
 import axios from 'axios';
 import React, { useState } from 'react';
 import { z } from 'zod';
-import '../../css/style.css';
+import '../../css/form.css';
 
 const clientSchema = z.object({
   salaoId: z.string(),

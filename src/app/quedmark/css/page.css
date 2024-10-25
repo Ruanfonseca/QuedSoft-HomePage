@@ -1,0 +1,85 @@
+.quedMarkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.quedMarkLogo {
+    margin: 20px 0;
+}
+
+.logoquedImg {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 0 40px;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.card {
+    width: 280px;
+    padding: 15px 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #ee20d6 0%, #0a2fb6 100%);
+    border-radius: 15px;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff3b0;
+    padding: 20px;
+    border-bottom: 2px solid gray;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.descricao p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.6;
+}
+
+.descricao p span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f9f871;
+}
+
+.botao-selecao {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #fff;
+    color: #0a2fb6;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.botao-selecao:hover {
+    background-color: #7B2CBF;
+    color: #ffffff;
+}
