@@ -15,6 +15,7 @@
 
 .sticky {
   background-color: #21a84b;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .logo-container {
@@ -60,7 +61,9 @@
 .nav-links li {
   margin: 0 15px;
 }
-
+.sticky .nav-links a {
+  color: white; /* Altera a cor para branco */
+}
 .nav-links a {
   text-decoration: none;
   color: black;

@@ -21,7 +21,11 @@ const Application = () => {
                                 <h1 className='titulo'>Organize sua agenda <span style={{color:'#21A84B'}}>com praticidade</span></h1>
                             </div>
                             <div className='paragrafo'>
-                                <p><strong>Conheça a QuedMark</strong>, uma plataforma SaaS inovadora para a gestão de atendimentos, criada para atender profissionais do setor de beleza e autônomos em geral. Ideal para salões, barbearias, estúdios de estética e qualquer prestador de serviços com agendamento prévio, seja pessoa física ou jurídica. A QuedMark facilita o agendamento, organização e acompanhamento de serviços, proporcionando uma experiência prática e eficiente para todos.</p>
+                                <p><strong>Conheça a QuedMark</strong>, 
+                                uma plataforma SaaS inovadora para a gestão de atendimentos, 
+                                criada para atender profissionais do setor de beleza e autônomos em geral.<br/>
+                                 Ideal para salões, barbearias, estúdios de estética e qualquer prestador de serviços com agendamento prévio, seja pessoa física ou jurídica.<br/> 
+                                 A QuedMark facilita o agendamento, organização e acompanhamento de serviços, proporcionando uma experiência prática e eficiente para todos.</p>
                             </div>
                             <div className='botao-saibamais'>
                                 <button className='botaosaibamais' onClick={handleButtonClick}>Saiba Mais</button>

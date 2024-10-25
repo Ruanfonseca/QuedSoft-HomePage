@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Button, ButtonToolbar, Drawer } from 'rsuite';
-import 'rsuite/dist/rsuite.min.css';
 import menu from '../../../assets/toggle.png';
 import logo from '../../../logoqued.png';
 import './Navbar.css';
