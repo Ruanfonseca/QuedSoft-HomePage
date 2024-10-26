@@ -8,7 +8,6 @@ import {
 import axios from 'axios';
 import React, { useState } from 'react';
 import { z } from 'zod';
-import '../../css/form.css';
 
 const clientSchema = z.object({
   salaoId: z.string(),
@@ -36,7 +35,7 @@ interface ClienteFormData extends z.infer<typeof clientSchema> {}
 
 interface FormClientProps {
   salaoId: string;
-  previousFormData?: Partial<ClienteFormData>; // Tornando opcional
+  previousFormData?: Partial<ClienteFormData>;
 }
 
 const FormClient: React.FC<FormClientProps> = ({ salaoId, previousFormData = {} }) => {
@@ -91,7 +90,6 @@ const FormClient: React.FC<FormClientProps> = ({ salaoId, previousFormData = {} 
     e.preventDefault();
 
     try {
-      // Validação com Zod
       clientSchema.parse(clientData);
       setErrors({});
       await axios.post(`http://localhost:5000/api/salon/${salaoId}/client`, clientData);

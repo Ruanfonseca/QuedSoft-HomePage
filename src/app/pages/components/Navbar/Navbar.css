@@ -62,7 +62,7 @@
   margin: 0 15px;
 }
 .sticky .nav-links a {
-  color: white; /* Altera a cor para branco */
+  color: white; 
 }
 .nav-links a {
   text-decoration: none;
@@ -89,6 +89,74 @@
 
 .drawer-responsive {
   display: none;
+}
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: flex-end;
+  z-index: 3000;
+  transition: opacity 0.3s ease; 
+}
+
+.drawer-content {
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: -250px; /* Começa fora da tela */
+  transition: right 0.4s ease; /* Transição suave para o Drawer */
+}
+
+/* Quando o Drawer está aberto */
+.drawer-overlay .drawer-content {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: center; /* Centraliza a logo */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-drawer {
+  display: block;
+  margin: 0 auto;
+}
+
+.drawer-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.drawer-list li {
+  margin: 15px 0;
+}
+
+.drawer-list li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 @media (max-width: 1024px) {

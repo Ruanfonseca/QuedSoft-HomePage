@@ -1,8 +1,11 @@
+/* Estilo padrão (Desktop) */
 .quedMarkContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .quedMarkLogo {
@@ -15,9 +18,10 @@
     max-width: 450px;
 }
 
-.quedMarkDescricao{
+.quedMarkDescricao {
     width: 70%;
 }
+
 .titulo {
     font-size: 2.5rem;
     font-weight: bold;
@@ -25,10 +29,12 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px 0 40px;
 }
-.textosobre{
+
+.textosobre {
     font-size: 18px;
     text-align: center;
 }
+
 .cardContainer {
     display: flex;
     justify-content: center;
@@ -88,4 +94,53 @@
 .botao-selecao:hover {
     background-color: #7B2CBF;
     color: #ffffff;
+}
+
+/* Responsividade para Tablets (largura entre 768px e 1024px) */
+@media (max-width: 1024px) {
+    .quedMarkDescricao {
+        width: 80%;
+    }
+    .titulo {
+        font-size: 2rem;
+    }
+    .cardContainer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card {
+        width: 80%;
+        max-width: 350px;
+    }
+}
+
+/* Responsividade para Celulares (largura abaixo de 768px) */
+@media (max-width: 768px) {
+    .logoquedImg {
+        max-width: 300px;
+    }
+    .quedMarkDescricao {
+        width: 90%;
+    }
+    .titulo {
+        font-size: 1.8rem;
+    }
+    .textosobre {
+        font-size: 16px;
+    }
+    .card {
+        width: 100%;
+        max-width: 280px;
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    .descricao p {
+        font-size: 1rem;
+    }
+    .botao-selecao {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }

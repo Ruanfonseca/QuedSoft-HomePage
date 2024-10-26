@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Button, ButtonToolbar, Drawer } from 'rsuite';
+import { Button, ButtonToolbar } from 'rsuite';
 import menu from '../../../assets/toggle.png';
 import logo from '../../../logoqued.png';
 import './Navbar.css';
@@ -52,24 +52,23 @@ const Navbar: React.FC = () => {
         )}
       </nav>
 
-      <Drawer
-        placement="right"
-        open={open}
-        onClose={() => setOpen(false)}
-        className="drawer-responsive"
-        size='xs'
+      {open && (
+  <div className={`drawer-overlay ${open ? 'open' : ''}`} onClick={() => setOpen(false)}>
+    <div className="drawer-content" onClick={(e) => e.stopPropagation()}>
+      <div className="drawer-header">
+        <Image src={logo} alt="Logo" className="logo-drawer" width={50} height={50} />
+        <Button onClick={() => setOpen(false)} className="close-button">X</Button>
+      </div>
+      <ul className="drawer-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+      </ul>
+    </div>
+  </div>
+)}
 
-      >
-        <Drawer.Body>
-          <ul className="drawer-list">
-           <Image src={logo} alt="Logo" className="logo-drawer"/>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-          </ul>
-        </Drawer.Body>
-      </Drawer>
     </>
   );
 }

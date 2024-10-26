@@ -1,0 +1,155 @@
+/* Ajustes Gerais */
+.imagemlogo {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logoquedImg {
+  width: 150px;
+  height: auto;
+}
+
+.tituloformulario {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tituloformulario h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo do formulário (Desktop) */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 40px;
+}
+
+/* Inputs, selects e botão */
+form input,
+form select,
+form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #21a84b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #1b8e3b;
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+/* Estilos para o input de upload de imagem */
+.upload-container {
+  display: flex; /* Usar flexbox para alinhar os itens */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 1rem; /* Espaçamento inferior entre os grupos de input */
+}
+
+.image-preview {
+  width: 60px; /* Largura da imagem */
+  height: 60px; /* Altura da imagem */
+  border-radius: 50%; /* Torna a imagem em formato de esfera */
+  overflow: hidden; /* Oculta partes da imagem que excedem o limite */
+  margin-right: 1rem; /* Espaçamento à direita da imagem */
+  border: 2px solid #ccc; /* Borda para a imagem */
+}
+
+.image-preview img {
+  width: 100%; /* Preenche toda a largura do container */
+  height: 100%; /* Preenche toda a altura do container */
+  object-fit: cover; /* Ajusta a imagem para cobrir o container */
+}
+
+.upload-wrapper {
+  display: flex; 
+  flex-direction: column; 
+}
+
+.upload-button {
+  cursor: pointer; 
+  background-color: #1b8e3b; 
+  color: white; 
+  padding: 0.5rem; 
+  border-radius: 4px; 
+  text-align: center; 
+  margin-bottom: 0.5rem; 
+}
+
+.upload-input {
+  display: none; /* Esconde o input file padrão */
+}
+
+.upload-filename {
+  margin-top: 0.5rem; /* Espaçamento acima do nome do arquivo */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  color: #666; /* Cor do texto do nome do arquivo */
+}
+
+.image-preview {
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 1024px) {
+  .tituloformulario h1 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .logoquedImg {
+    width: 120px;
+  }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+  .tituloformulario h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  form input,
+  form select,
+  form button {
+    font-size: 0.9rem;
+  }
+
+  .logoquedImg {
+    width: 100px;
+  }
+}
