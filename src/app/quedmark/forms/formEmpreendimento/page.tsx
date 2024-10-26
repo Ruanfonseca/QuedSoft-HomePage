@@ -1,10 +1,9 @@
-'use client'
+'use client';
 import Footer from '@/app/pages/components/Footer/Footer';
 import Navbar from '@/app/pages/components/Navbar/Navbar';
 import axios from 'axios';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import InputMask from 'react-input-mask';
 import { z } from 'zod';
 import QuedMarkLogo2 from '../../../assets/QuedMarkLogo2.png';
 import '../../css/formEmpreendimento.css';
@@ -61,7 +60,6 @@ const FormSalon: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [showClientForm, setShowClientForm] = useState(false);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -79,27 +77,32 @@ const FormSalon: React.FC = () => {
     );
   }, []);
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, field: 'foto' | 'capa') => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prevData) => ({
-          ...prevData,
-          [field]: reader.result as string,
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
+  const formatPhone = (value: string) => {
+    return value
+      .replace(/\D/g, '') // Remove caracteres não numéricos
+      .replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3') // Formata como (99) 99999-9999
+      .substring(0, 15); // Limita ao comprimento correto
   };
 
-  const handleCepChange = async (cep: string) => {
-    const cepFormatted = cep.replace(/\D/g, '');
-    setFormData({ ...formData, endereco: { ...formData.endereco, cep: cepFormatted } });
+  const formatCep = (value: string) => {
+    return value
+      .replace(/\D/g, '') // Remove caracteres não numéricos
+      .replace(/(\d{5})(\d{3})/, '$1-$2') // Formata como 99999-999
+      .substring(0, 9); // Limita ao comprimento correto
+  };
 
-    if (cepFormatted.length === 8) {
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedPhone = formatPhone(e.target.value);
+    setFormData({ ...formData, telefone: formattedPhone });
+  };
+
+  const handleCepChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedCep = formatCep(e.target.value);
+    setFormData({ ...formData, endereco: { ...formData.endereco, cep: formattedCep } });
+
+    if (formattedCep.length === 9) {
       try {
-        const { data } = await axios.get(`https://viacep.com.br/ws/${cepFormatted}/json/`);
+        const { data } = await axios.get(`https://viacep.com.br/ws/${formattedCep.replace('-', '')}/json/`);
         setFormData((prevData) => ({
           ...prevData,
           endereco: {
@@ -115,39 +118,49 @@ const FormSalon: React.FC = () => {
     }
   };
 
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, field: 'foto' | 'capa') => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          [field]: reader.result as string,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      salonSchema.parse(formData); // Valida os dados
+      salonSchema.parse(formData);
       setErrors({});
-      setShowClientForm(true); // Define que os dados estão prontos para exibição no FormClient
+      // Lógica para enviar os dados do formulário
     } catch (err) {
       if (err instanceof z.ZodError) {
         const validationErrors = err.errors.reduce((acc, error) => {
           const pathKey = error.path.join('.');
           acc[pathKey] = error.message;
           return acc;
-        }, {});
+        }, {} as { [key: string]: string });
         setErrors(validationErrors);
       }
     }
   };
-
-  if (showClientForm) {
-   // Passa o formData como props para o FormClient
-  }
 
   return (
     <>
       <Navbar />
       <div className="imagemlogo">
         <Image className="logoquedImg" src={QuedMarkLogo2} alt="Logo QuedMark" />
-      </div> 
+      </div>
       <div className="tituloformulario">
         <h1>Preencha com dados do seu empreendimento</h1>
       </div>
 
-      <form onSubmit={handleSubmit} className='formulario'>
+      <form onSubmit={handleSubmit} className="formulario">
         <label>Nome do Empreendimento</label>
         <input
           type="text"
@@ -173,64 +186,28 @@ const FormSalon: React.FC = () => {
         {errors.tipo && <p>{errors.tipo}</p>}
 
         <label className="upload-label">Foto ou logo da Empresa</label>
-            <div className="upload-container">
-              <div className="image-preview">
-                {formData.foto && (
-                  <Image
-                    src={formData.foto}
-                    alt="Preview da imagem"
-                    width={60} // Largura da imagem
-                    height={60} // Altura da imagem
-                    objectFit="cover" // Cobre a área do componente
-                  />
-                )}
-              </div>
-              <div className="upload-wrapper">
-                <label htmlFor="fotoUpload" className="upload-button">
-                  Escolher arquivo
-                </label>
-                <input
-                  id="fotoUpload"
-                  className="upload-input"
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => handleImageUpload(e, 'foto')}
-                  required
-                />
-                <span className="upload-filename">{formData.foto ? 'Imagem selecionada' : 'Nenhum arquivo selecionado'}</span>
-              </div>
-              {errors.foto && <p>{errors.foto}</p>}
-            </div>
-
-            <label className="upload-label">Foto da fachada ou do empreendimento</label>
-            <div className="upload-container">
-              <div className="image-preview">
-                {formData.capa && (
-                  <Image
-                    src={formData.capa}
-                    alt="Preview da imagem"
-                    width={60} // Largura da imagem
-                    height={60} // Altura da imagem
-                    objectFit="cover" // Cobre a área do componente
-                  />
-                )}
-              </div>
-              <div className="upload-wrapper">
-                <label htmlFor="capaUpload" className="upload-button">
-                  Escolher arquivo
-                </label>
-                <input
-                  id="capaUpload"
-                  className="upload-input"
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => handleImageUpload(e, 'capa')}
-                  required
-                />
-                <span className="upload-filename">{formData.capa ? 'Imagem selecionada' : 'Nenhum arquivo selecionado'}</span>
-              </div>
-              {errors.capa && <p>{errors.capa}</p>}
-            </div>
+        <div className="upload-container">
+          <div className="image-preview">
+            {formData.foto && (
+              <Image src={formData.foto} alt="Preview da imagem" width={60} height={60} objectFit="cover" />
+            )}
+          </div>
+          <div className="upload-wrapper">
+            <label htmlFor="fotoUpload" className="upload-button">
+              Escolher arquivo
+            </label>
+            <input
+              id="fotoUpload"
+              className="upload-input"
+              type="file"
+              accept="image/*"
+              onChange={(e) => handleImageUpload(e, 'foto')}
+              required
+            />
+            <span className="upload-filename">{formData.foto ? 'Imagem selecionada' : 'Nenhum arquivo selecionado'}</span>
+          </div>
+          {errors.foto && <p>{errors.foto}</p>}
+        </div>
 
         <label>Email</label>
         <input
@@ -243,23 +220,23 @@ const FormSalon: React.FC = () => {
         {errors.email && <p>{errors.email}</p>}
 
         <label>Telefone</label>
-        <InputMask
-          mask="(99) 99999-9999"
+        <input
+          type="text"
+          placeholder="Telefone"
           value={formData.telefone}
-          onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
-        >
-          {(inputProps) => <input {...inputProps} type="text" placeholder="Telefone" required />}
-        </InputMask>
+          onChange={handlePhoneChange}
+          required
+        />
         {errors.telefone && <p>{errors.telefone}</p>}
 
         <label>CEP</label>
-        <InputMask
-          mask="99999-999"
+        <input
+          type="text"
+          placeholder="CEP"
           value={formData.endereco.cep}
-          onChange={(e) => handleCepChange(e.target.value)}
-        >
-          {(inputProps) => <input {...inputProps} type="text" placeholder="CEP" required />}
-        </InputMask>
+          onChange={handleCepChange}
+          required
+        />
         {errors['endereco.cep'] && <p>{errors['endereco.cep']}</p>}
 
         <button type="submit">Avançar</button>
